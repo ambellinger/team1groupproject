@@ -86,7 +86,7 @@ $("#submit-button").on("click", function(event) {
 
 
     // Appends a header to the user of their search of choice
-    $("#results-display").append("<h4> You searched for: " + keyword + "</h4>");
+    $("#results-display-recipe-api").append("<h4> You searched for: " + keyword + "</h4>");
 
 
     // AJAX Function to retrive recipe results
@@ -126,7 +126,7 @@ $("#submit-button").on("click", function(event) {
                     cardDiv.append(image);
                     
                     // Function that appends 
-                    $("#results-display").append(cardDiv);
+                    $("#results-display-recipe-api").append(cardDiv);
 
                 };
 
