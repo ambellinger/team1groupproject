@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recipe API Test!</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+        <!-- Example NAVBAR -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">LET'S COOKIT!</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" id="keyword-input" placeholder="Ex. 'vegetarian', 'fish'" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" id="submit-button" type="submit">Search</button>
+                  </form>
+                </div>
+              </nav>
+
+              <!-- JUMBOTRON -->
+              <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                      <h1 class="display-4">LET'S COOKIT!</h1>
+                      <p class="lead">Looking for an easy TV dinner tonight, or looking to impress your family?<br>
+                        Look no further. Let's CookIt! is here to help you find your next recipe & inspiration!</p>
+                        <p class="lead">Take us with you on your tablet, phone, or laptop...and keep your notes and recipes in ONE place!</p>
+                    </div>
+                  </div>
+
+    
+    <!-- Main Content DIV -->
+
+    <div class="container">
+        <div class="row">
+            <h2>Your Search Results</h2>
+        </div>
+
+        <div class="row" id="results-display">
+           
+          
+
+        </div>
+    </div>
+
+
+
+
+<!-- jQuery & Other JS-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery.js"></script>
+
+<!-- Script -->
+<script>
+
+
+// On-click function for submit button:
+$("#submit-button").on("click", function(event) {
+
+    // Prevents page from refreshing
+    event.preventDefault();
+
+    // Variables for the URL
+    var keyword = $("#keyword-input").val().trim();
+    var queryURL = "https://api.edamam.com/search?q=" + keyword + "&from=0&to=5&app_id=59ec5ff0&app_key=d3912b55cf5347652819bac24659bbc8";
+
+
+    // Appends a header to the user of their search of choice
+    $("#results-display").append("<h4> You searched for: " + keyword + "</h4>");
+
+
+    // AJAX Function to retrive recipe results
+    function getRecipe(queryURL) {
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+            .then(function(response) {
+                console.log(response);
+
+                var results = response.hits;
+                for(var i = 0; i < results.length; i++) {
+                    console.log(results[i].recipe.label);
+                    
+                    // Parameters and attributes for the dynamic cardDiv
+                    var cardDiv = $("<div class='card'>");
+                        cardDiv.attr("style", "width: 18rem;");
+                        cardDiv.css("float", "left");
+                        cardDiv.css("margin", "15px");
+
+
+                    // Attributes for the image, links and title - within the card
+                    var image = $("<img>");
+                        image.addClass("recipe-image");
+                        image.attr("src", results[i].recipe.image);
+
+                    var recipeLink = $("<a>");
+                        recipeLink.attr("href", results[i].recipe.shareAs);
+
+                    var recipeTitle = $("<p>").text(results[i].recipe.label);
+                        recipeTitle.attr("class", "recipe-title");
+                        recipeTitle.append(recipeLink);
+
+                    cardDiv.append(recipeTitle);
+                    cardDiv.append(image);
+                    
+                    // Function that appends 
+                    $("#results-display").append(cardDiv);
+
+                };
+
+            });
+
+    };
+
+
+
+
+getRecipe(queryURL);
+
+
+
+
+});
+    
+
+</script>
+
+</body>
+</html>
