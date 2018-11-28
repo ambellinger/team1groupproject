@@ -14,16 +14,6 @@ $(document).ready(function () {
   };
   firebase.initializeApp(config);
 
- // Initialize Firebase
-//  var config = {
-//   apiKey: "AIzaSyDuFp7F8IhRg-1HY--k4KCs59K1is4iVrk",
-//   authDomain: "todo-b6e86.firebaseapp.com",
-//   databaseURL: "https://todo-b6e86.firebaseio.com",
-//   projectId: "todo-b6e86",
-//   storageBucket: "todo-b6e86.appspot.com",
-//   messagingSenderId: "373801807408"
-// };
-// firebase.initializeApp(config);
 
   var database = firebase.database();
 
@@ -81,17 +71,11 @@ $(document).ready(function () {
      
     });
      
-    
-
   }
-
 
   // function to mark the task done
   function completeItem(event) {
     $(this).parent().toggleClass('done');
-
-
-
   }
 
 
@@ -111,12 +95,7 @@ $(document).ready(function () {
     }, function (errorObject) {
       console.log("The read failed: " + errorObject.code);
     });
-  
 
-
- 
- 
-  
 });
 
 
