@@ -11,13 +11,20 @@
 
 //Recipe API//
     //Create query URL using the input seach area variable//
-    // On-click function for submit button:
+
+// On-click function for submit button:
+var dynamicRecipeDiv;
+
 $("#submit-button").on("click", function(event) {
 
-      //Empty left div//
-      //Empty right div//
+
     // Prevents page from refreshing
     event.preventDefault();
+
+    // Should empty the search result DIVs
+    $("#title-recipe-results").empty();
+    $("#results-display").empty();
+    $("#results-display-recipe-api").empty();
 
     
 //Recipe API//
@@ -29,16 +36,14 @@ $("#submit-button").on("click", function(event) {
 
 
     // Appends a header to the user of their search of choice
-    $("#results-display-recipe-api").append("<h4> You searched for: " + keyword + "</h4>");
+    $("#title-recipe-results").prepend("<h4>Recipes for: " + keyword + "</h4>");
 
 
-    // AJAX Function to retrive recipe results
+    // ***** AJAX Function to retrive recipe results
     function getRecipe(queryURL) {
 
           
-    //AJAX Call//
-      
-     
+        //AJAX Call//
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -47,44 +52,130 @@ $("#submit-button").on("click", function(event) {
                 console.log(response);
 
                 var results = response.hits;
-                for(var i = 0; i < results.length; i++) {
-                    console.log(results[i].recipe.label);
 
-                    // Parameters and attributes for the dynamic cardDiv
-                    var cardDiv = $("<div class='card'>");
-                        cardDiv.attr("style", "width: 18rem;");
-                        cardDiv.css("float", "left");
-                        cardDiv.css("margin", "15px");
+               
+                            // Function #1 --- for populating search results with card.
+                            for(var i = 0; i < results.length; i++) {
+                                console.log(results[i].recipe.label);
+                                
 
 
-                    // Attributes for the image, links and title - within the card
-                    var image = $("<img>");
-                        image.addClass("recipe-image");
-                        image.attr("src", results[i].recipe.image);
+                                // Parameters and attributes for the dynamic cardDiv
+                                var cardDiv = $("<div class='card text-center'>");
+                                    cardDiv.attr("style", "width: 14rem;");
+                                    cardDiv.attr("data-id", results[i].recipe.label);
+                                    cardDiv.attr("data-image", results[i].recipe.image);
+                                    cardDiv.attr("data-url", results[i].recipe.url);
+                                    cardDiv.attr("id", "recipe-result");
+                                    cardDiv.css("float", "left");
+                                    cardDiv.css("margin", "15px");
 
-                    var recipeLink = $("<a>");
-                        recipeLink.attr("href", results[i].recipe.shareAs);
 
-                    var recipeTitle = $("<p>").text(results[i].recipe.label);
-                        recipeTitle.attr("class", "recipe-title");
-                        recipeTitle.append(recipeLink);
+                                // Attributes for the image, links and title - within the card
+                                var image = $("<img>");
+                                    image.addClass("recipe-image text-center recipe-result");
+                                    image.attr("src", results[i].recipe.image);
+                                    image.css("height", "70%");
+                                    image.css("width", "70%");
 
-                    cardDiv.append(recipeTitle);
-                    cardDiv.append(image);
-                    
-                    // Function that appends 
-                    $("#results-display-recipe-api").append(cardDiv);
 
-                };
+                                var recipeLink = $("<a>");
+                                    recipeLink.addClass("recipe-title recipe-result");
+                                    recipeLink.attr("data-id", results[i].recipe.label);
+                                    recipeLink.text(results[i].recipe.label);
+
+
+
+                                // Creates the table for the ingredient-list.
+                                var ingredientTable = $("<ul>");
+
+                                var ingredient;
+                                for(var x = 0; x < results[i].recipe.ingredientLines.length; x++) {
+                                    console.log("Ingredient: " + results[i].recipe.ingredientLines[x]);
+                                    ingredient = $("<li>").html("&#9642; " + results[i].recipe.ingredientLines[x]);
+                                    ingredientTable.append(ingredient);
+                                };
+                             
+
+                                // Assigns ingredientTable to the global variable.
+                                dynamicRecipeDiv = ingredientTable;
+
+
+
+
+                                // Append all our created elements into our HTML.
+                                cardDiv.append(recipeLink);
+                                cardDiv.append(image);
+                                
+                                $("#results-display-recipe-api").append(cardDiv);
+
+                            };
+
+
+
+                        
+    
+    
 
             });
 
     };
 
+
+    
+
 getRecipe(queryURL);
 
 
+
 });
+
+
+function showRecipe() {
+
+    // cardDiv.on("click", function() {
+        console.log("Function showRecipe() now works");
+
+
+        // Clears the divs prior to displaying the search results
+        $("#title-recipe-results").empty();
+        $("#WHATEVER-MELVIN-PICKED").empty();
+        $("#results-display-recipe-api").empty();
+
+        event.preventDefault();
+
+
+        // Creating a variable to call the attributes of cardDiv
+        var recipeTitle = $(this).attr("data-id");
+        var recipeImg = $(this).attr("data-image");
+        var recipeURL = $(this).attr("data-url");
+
+
+        // Creating a new div to display our selected recipe results.
+        var displayRecipeImage = $("<img>");
+        displayRecipeImage.attr("src", recipeImg);
+
+        var displayRecipeURL = $("<a>");
+        displayRecipeURL.attr("href", recipeURL);
+
+
+
+
+        // Append all created elements onto our HTML.
+        $("#title-recipe-results").append("<h2>" + recipeTitle + "</h2>");
+        $("#results-display-recipe-api").append(displayRecipeImage);
+        $("#results-display-recipe-api").append(recipeURL);
+        $("#results-display-recipe-api").append("<h2>Ingredients:</h2><br>", dynamicRecipeDiv);
+   
+
+        
+
+    // });
+};
+
+
+$(document).on("click", "#recipe-result", showRecipe);
+
   
 //Youtube API//
     //Create query URL using the input seach area variable//
@@ -95,8 +186,16 @@ getRecipe(queryURL);
             //Include still image//
             //Description if necessary//
 
+
+
+
 //EVENT TWO: USER SELECTS ONE OF THE RECIPES AND THE DETAILS PAGE EMERGES //
 //Onclick function that interacts with selected recipe.//
+
+    // please see the function #2 within submit button on-click
+    
+    
+    
 
 //Displays the recipe in the left div//
     //Empty div//

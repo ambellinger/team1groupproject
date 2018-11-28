@@ -12,6 +12,13 @@
 }
 
 .recipe-title {
-    font-size: 16px;
-    color: #7e3491;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #49966b;
+}
+
+.recipe-title:hover {
+    color: #2b503f;
+    text-decoration: none;
 }
