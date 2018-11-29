@@ -7,9 +7,16 @@ $(document).ready(function(){
     function searchYouTube(userSearch){
     
         // clear the page of any content in order to load the new results
-        $("#thumbnail-space").empty();
+        // $("#thumbnail-space").empty();
     
-        $("#content-space").empty();
+        // $("#content-space").empty();
+
+        // Clears the divs prior to displaying the search results
+        $("#title-recipe-results").empty();
+        $("#title-youtube-results").empty();
+        $("#results-display-recipe-api").empty();
+        $("#results-display-youtube-api").empty();
+        $("#todoDiv").hide();
     
         // the search term applied to the ajax call is the user's and is being passed through the function
         var searchTerm = userSearch;
@@ -44,7 +51,10 @@ $(document).ready(function(){
             var videoTitle = results[i].snippet.title;
     
             // dynamically create a new div with the source as the previous thumbnail url
-            var resultsDisplayed = $("<img>").attr("src", video);
+            var resultsDisplayed = $("<img class='user-pick'>").attr("src", video);
+
+            // 
+            resultsDisplayed.attr("id", "youtube-results")
     
             // retrieve the corresponding video ID and title of the video
             resultsDisplayed.attr("data-id", results[i].id.videoId);
@@ -57,9 +67,12 @@ $(document).ready(function(){
     
             // attach all the previously attained info to the div created earlier
             resultsDisplayed.append(video);
+
+            // display the title identifying the youtube videos
+            $("#title-youtube-results").html("<h2>YouTube Video Results</h2>");
     
             // display the thumbnails on the pre-existing div
-            $("#thumbnail-space").append("<h5>"+ videoTitle + "</h5>", "<p>", resultsDisplayed, "<p>");
+            $("#results-display-youtube-api").append("<p>", "<h5>"+ videoTitle + "</h5>", "<br>",  resultsDisplayed, "</p>");
             
             }
     
@@ -75,7 +88,7 @@ $(document).ready(function(){
         event.preventDefault();
     
         // store the user input search term in a var and eliminate any whitespace before and after the term
-        var userSearch = $("#user-search-term").val().trim();
+        var userSearch = $("#keyword-input").val().trim();
     
         console.log("this is the term " + userSearch);
     
@@ -85,8 +98,14 @@ $(document).ready(function(){
     
     // this function will display the youtube video on the page
     function selectVideo(){
+        // Clears the divs prior to displaying the search results
+        $("#title-recipe-results").empty();
+        $("#title-youtube-results").empty();
+        $("#results-display-recipe-api").empty();
+        $("#results-display-youtube-api").empty();
+
         // retrieve the data-title attribute from the thumbanil being clicked and store it
-        var imgTitle = $(this).attr("data-title");
+        // var imgTitle = $(this).attr("data-title");
     
         // retrieve the data-id attribute from the thumbnail being clicked and store it
         var imgId = $(this).attr("data-id");
@@ -113,11 +132,11 @@ $(document).ready(function(){
         // var player = $("<video width='640' height='360'><source src='https://www.youtube.com/embed/" + imgId + "'></video>");
         
         // hide the video thumbnails list
-        $("#thumbnail-space").empty();
+        // $("#thumbnail-space").empty();
        
     
         // display the video on the left side of the screen
-        $("#content-space").append(player);
+        $("#results-display-recipe-api").append(player);
     
         
         // console.log(imgTitle);
@@ -131,7 +150,7 @@ $(document).ready(function(){
     
     // since the video thumbnails will be dynamically created, then add an on-click function to 
     // the img element tag and run the selectVideo function
-    $(document).on("click", "img", selectVideo);
+    $(document).on("click", "#youtube-results", selectVideo);
     
     
     });
