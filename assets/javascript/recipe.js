@@ -21,6 +21,12 @@ $(document).ready(function(){
     
         // Prevents page from refreshing
         event.preventDefault();
+
+        if ($("#keyword-input").val().trim()===""){
+            alert("Cannot search for an empty recipe!");
+        }
+
+        else{
     
         // Should empty the search result DIVs
         $("#title-recipe-results").empty();
@@ -130,7 +136,7 @@ $(document).ready(function(){
     getRecipe(queryURL);
     
     
-    
+    }
     });
     
     

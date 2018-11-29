@@ -80,12 +80,27 @@ $(document).ready(function(){
         });
     
     };
+
+    function verifySearchField(){
+        if ($("#keyword-input").val().trim()===""){
+            alert("Cannot search for an empty recipe!");
+        }
+
+    }
+
     
     // code to be run when the user clicks the search button
     $("#submit-button").on("click", function(){
             
         // prevent the form from reloading the page
         event.preventDefault();
+
+        // verify if the input field is empty before submitting the ajax calls
+        if ($("#keyword-input").val().trim()===""){
+            alert("Cannot search for an empty recipe!");
+        }
+
+        else{
     
         // store the user input search term in a var and eliminate any whitespace before and after the term
         var userSearch = $("#keyword-input").val().trim();
@@ -94,6 +109,7 @@ $(document).ready(function(){
     
         // initiate the searchYouTube function and pass through the userSearch var as an argument
         searchYouTube(userSearch);
+    }
     });
     
     // this function will display the youtube video on the page
