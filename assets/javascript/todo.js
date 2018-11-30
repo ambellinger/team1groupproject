@@ -45,7 +45,7 @@ $(document).ready(function () {
  
   function displayToDoList() {
 
-      alert("clicked...");
+      // alert("clicked...");
     // alert("clicked");
 
     $("#todoDiv").show();
@@ -129,8 +129,8 @@ $(document).ready(function () {
     // Console.loging the last user's data
     console.log(sv.Todo);
     //span has id from the firebase field called id
-    $("#todos").append("<li><input class = 'completeItem' type ='checkbox'>" + sv.Todo
-      + "<span id='" + sv.id + "' class = 'fas fa-trash-al'></span></li>");
+    $('#todos').append('<li><input class = "completeItem" type ="checkbox">' + sv.Todo
+   + '<span id="' + sv.id + '" class = "fas fa-trash-alt deleteItem"></span></li>');
  
  
   }, function (errorObject) {
