@@ -12,6 +12,7 @@ $(document).ready(function(){
         // $("#content-space").empty();
 
         // Clears the divs prior to displaying the search results
+        $("#introarea").empty();
         $("#title-recipe-results").empty();
         $("#title-youtube-results").empty();
         $("#results-display-recipe-api").empty();
@@ -69,10 +70,10 @@ $(document).ready(function(){
             resultsDisplayed.append(video);
 
             // display the title identifying the youtube videos
-            $("#title-youtube-results").html("<h2>YouTube Video Results</h2>");
-    
+            //$("#title-youtube-results").html("<h2>YouTube Video Results</h2>");
+           
             // display the thumbnails on the pre-existing div
-            $("#results-display-youtube-api").append("<p>", "<h5>"+ videoTitle + "</h5>", "<br>",  resultsDisplayed, "</p>");
+            $("#results-display-youtube-api").append("<h5>"+ videoTitle + "</h5>", "<br>",  resultsDisplayed);
             
             }
     
@@ -80,26 +81,18 @@ $(document).ready(function(){
         });
     
     };
-
-    function verifySearchField(){
-        if ($("#keyword-input").val().trim()===""){
-            alert("Cannot search for an empty recipe!");
-        }
-
-    }
-
     
     // code to be run when the user clicks the search button
     $("#submit-button").on("click", function(){
-            
+        
         // prevent the form from reloading the page
         event.preventDefault();
 
-        // verify if the input field is empty before submitting the ajax calls
         if ($("#keyword-input").val().trim()===""){
-            alert("Cannot search for an empty recipe!");
-        }
 
+            $("#my-modal").modal("show")
+        }
+ 
         else{
     
         // store the user input search term in a var and eliminate any whitespace before and after the term
@@ -109,12 +102,13 @@ $(document).ready(function(){
     
         // initiate the searchYouTube function and pass through the userSearch var as an argument
         searchYouTube(userSearch);
-    }
+        }
     });
     
     // this function will display the youtube video on the page
     function selectVideo(){
         // Clears the divs prior to displaying the search results
+        
         $("#title-recipe-results").empty();
         $("#title-youtube-results").empty();
         $("#results-display-recipe-api").empty();
@@ -130,8 +124,10 @@ $(document).ready(function(){
         var player = $("<iframe>");
     
         // add width and height specifications to the video player
-        player.css("width", "640");
-        player.css("height", "360");
+        // player.css("width", "640");
+        // player.css("height", "360");
+        player.css("width", "320");
+        player.css("height", "180");
     
         //add an id, type, source and frameborder attibute to the video player 
         player.attr("type", "text/html");

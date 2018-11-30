@@ -1,5 +1,6 @@
 $(document).ready(function(){
-    //*//Pseduocode//*//
+
+    // //*//Pseduocode//*//
     
     //Connect to Firebase//
     
@@ -23,9 +24,10 @@ $(document).ready(function(){
         event.preventDefault();
 
         if ($("#keyword-input").val().trim()===""){
-            alert("Cannot search for an empty recipe!");
-        }
 
+            $("#my-modal").modal("show")
+        }
+ 
         else{
     
         // Should empty the search result DIVs
@@ -70,8 +72,8 @@ $(document).ready(function(){
     
     
                                     // Parameters and attributes for the dynamic cardDiv
-                                    var cardDiv = $("<div class='card text-center user-pick'>");
-                                        cardDiv.attr("style", "width: 14rem;");
+                                    var cardDiv = $("<div class='recipeclass'>");
+                                        cardDiv.attr("style", "border: none;");
                                         cardDiv.attr("data-id", results[i].recipe.label);
                                         cardDiv.attr("data-image", results[i].recipe.image);
                                         cardDiv.attr("data-url", results[i].recipe.url);
@@ -84,8 +86,8 @@ $(document).ready(function(){
                                     var image = $("<img>");
                                         image.addClass("recipe-image text-center recipe-result");
                                         image.attr("src", results[i].recipe.image);
-                                        image.css("height", "70%");
-                                        image.css("width", "70%");
+                                       //image.css("height", "100%");
+                                       //image.css("width", "100%");
     
     
                                     var recipeLink = $("<a>");
@@ -135,8 +137,8 @@ $(document).ready(function(){
     
     getRecipe(queryURL);
     
-    
     }
+    
     });
     
     
@@ -165,20 +167,21 @@ $(document).ready(function(){
             var displayRecipeImage = $("<img>");
             displayRecipeImage.attr("src", recipeImg);
     
-            var displayRecipeURL = $("<a>");
-            displayRecipeURL.attr("href", recipeURL);
-    
+            var displayRecipeURL = $("<button>");
+            displayRecipeURL.addClass("btn");
+            displayRecipeURL.attr("onclick", "window.location.href='" + recipeURL + "'");
+            displayRecipeURL.attr("type", "button");
+            displayRecipeURL.text("Click Here For Instructions");
+            displayRecipeImage.css("clear", "both");
     
     
     
             // Append all created elements onto our HTML.
             $("#title-recipe-results").append("<h2>" + recipeTitle + "</h2>");
             $("#results-display-recipe-api").append(displayRecipeImage);
-            $("#results-display-recipe-api").append(recipeURL);
+           
             $("#results-display-recipe-api").append("<h2>Ingredients:</h2><br>", dynamicRecipeDiv);
-       
-    
-            
+             $("#results-display-recipe-api").append(displayRecipeURL);
     
         // });
     };

@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- Reset stylesheet -->
-    <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
@@ -15,7 +13,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
     <!-- CSS styleheet -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/sassstyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=El+Messiri" rel="stylesheet">
 
 
     <title>Let's CookIt!</title>
@@ -24,10 +24,21 @@
 <body>
 
 
+    <!-- JUMBOTRON -->
+    <div class="logo">
+        <div class="container">
+            <h1 class="display-4">Let's CooKit!</h1>
+            <!-- <p class="lead">Looking for an easy TV dinner tonight, or looking to impress your family?<br>
+                    Look no further. Let's CookIt! is here to help you find your next recipe & inspiration!</p>
+                <p class="lead">Take us with you on your tablet, phone, or laptop...and keep your notes and recipes in ONE
+                    place!</p> -->
+        </div>
+    </div>
+
     <!-- Navigation Area -->
     <!-- Inserted generic navigation bar from bootstrap -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">LET'S COOKIT!</a>
+        <!-- <a class="navbar-brand" href="#">LET'S COOKIT!</a> -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -36,10 +47,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index-jenina.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="about.html">About</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -51,17 +62,6 @@
     </nav>
 
 
-    <!-- JUMBOTRON -->
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">LET'S COOKIT!</h1>
-            <p class="lead">Looking for an easy TV dinner tonight, or looking to impress your family?<br>
-                Look no further. Let's CookIt! is here to help you find your next recipe & inspiration!</p>
-            <p class="lead">Take us with you on your tablet, phone, or laptop...and keep your notes and recipes in ONE
-                place!</p>
-        </div>
-    </div>
-
 
 
     <!-- main area with two white sides framing the content -->
@@ -69,26 +69,24 @@
         <div class="col-md-1"></div>
 
         <!-- Inside here there info will pop up. -->
-        <div class="col-md-10">
+        <div class="col-md-10" id="infoarea">
             <div class="row">
-                <!-- Left column -->
-                <div class="col-md-6">
+                
+                <!-- Bio area -->
+                <div class="col-md-12" class="bio">
+                    <h5> Meet Melvin and The Chipmunks</h5>
+                    <h6>Melvin</h6>
+                    <img id="chip" src="assets/images/Melvin-munk.jpg">
+                    <h6>Darakhshan</h6>
+                    <img id="chip" src="assets/images/Darak-munk.jpg">
+                    <h6>Jenina</h6>
+                    <img id="chip" src="assets/images/jenina-munk.jpg">
+                    <h6>Alexis</h6>
+                    <img id="chip" src="assets/images/alexis-munk.jpg">
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div id="title-recipe-results">
-                                <!--Title of recipe will dynamically appear here-->
-                            </div>
-                        </div>
-                        <div class="row" id="results-display-recipe-api">
-                        </div>
-                    </div>
                 </div>
-                <!-- Right column -->
-                <div class="col-md-6">
-                    <!-- testing awesome fonts integration -->
-                        <i class="fas fa-trash-alt"></i>
 
+               
 
                     <!-- test to-do list -->
 
@@ -133,7 +131,8 @@
             </div>
 
         </div>
-        <div class="col-md-1"></div>
+        <div class="col-md-1">
+        </div>
     </div>
     </div>
 
@@ -156,5 +155,6 @@
     <script type="text/javascript" src="assets/javascript/ytlogic.js"></script>
 
 </body>
+<footer>© Copyright 2018 Melvin and the Chipmunks </footer>
 
 </html>
