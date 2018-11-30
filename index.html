@@ -3,26 +3,42 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <!-- bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <!-- Reset stylesheet -->
-    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <!-- awesome fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
     <!-- CSS styleheet -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/sassstyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=El+Messiri" rel="stylesheet">
+
 
     <title>Let's CookIt!</title>
 </head>
 
 <body>
-    <!-- Banner with Logo -->
-    <img src="assets/images/product-banner-placeholder.jpg">
+
+
+    <!-- JUMBOTRON -->
+    <div class="logo">
+        <div class="container">
+            <h1 class="display-4">Let's CooKit!</h1>
+            <!-- <p class="lead">Looking for an easy TV dinner tonight, or looking to impress your family?<br>
+                    Look no further. Let's CookIt! is here to help you find your next recipe & inspiration!</p>
+                <p class="lead">Take us with you on your tablet, phone, or laptop...and keep your notes and recipes in ONE
+                    place!</p> -->
+        </div>
+    </div>
 
     <!-- Navigation Area -->
     <!-- Inserted generic navigation bar from bootstrap -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- <a class="navbar-brand" href="#">LET'S COOKIT!</a> -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,54 +47,168 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index-jenina.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
+                    <a class="nav-link" href="about.html">About</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2" type="search" id="keyword-input" placeholder="Ex. 'vegetarian', 'fish'"
+                    aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" id="submit-button" type="submit">Search</button>
             </form>
         </div>
     </nav>
 
-    <div class="container">
 
-        <!-- main area with two white sides framing the content -->
-        <div class="row">
-            <div class="col-md-2"></div>
 
-            <!-- Inside here there info will pop up. -->
-            <div class="col-md-8">
-                <div class="row">
-                    <!-- Left column -->
-                    <div class="col-md-6"></div>
-                    <!-- Right column -->
-                    <div class="col-md-6"></div>
+
+    <!-- main area with two white sides framing the content -->
+    <div class="row">
+        <div class="col-md-1"></div>
+
+        <!-- Inside here there info will pop up. -->
+        <div class="col-md-10" id="infoarea">
+            <div class="row">
+                
+                <!-- Left column -->
+                <div class="col-md-6">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="title-recipe-results">
+                                <!--Title of recipe will dynamically appear here-->
+                            </div>
+                        </div>
+                        <div class="row" id="results-display-recipe-api">
+                            <img src="assets/images/adorable-baby-baker-35666.jpg" class="stockphoto">
+                        </div>
+                    </div>
+                </div>
+                <!-- Right column -->
+                <div class="col-md-6" >
+                    <!-- testing awesome fonts integration -->
+                    <!-- <i class="fas fa-trash-alt"></i>  -->
+
+                    <div id="introarea">
+                    <h3>Welcome to Let's Cookit!</h3>
+                    <p>  Looking for an easy TV dinner tonight, or looking to impress your family?</p>
+                        <p>Look no further.</p><p>Let's CookIt! is here to help you find your next recipe & inspiration!
+                  Take us with you on your tablet, phone, or laptop...and keep your notes and recipes in ONE
+                        place!</p>
+            <button type="button" class="btn" id="modalbutton" data-toggle="modal" data-target="#exampleModal"
+                    data-whatever="@getbootstrap">Sign up for our Mailing List</button>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Enter your information below</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Name</label>
+                                        <input type="text" class="form-control" id="recipient-name">
+                                    </div>
+                                    <div class="form-group">
+                                            <label for="exampleInputEmail1">Email address</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                            <small id="emailHelp" class="form-text text-muted">We'll only share your email with the Russians.</small>
+                                          </div>
+                                
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" id="send">Send</button>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
                 </div>
 
             </div>
-            <div class="col-md-2"></div>
+
+                    <!-- test to-do list -->
+
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3">
+                            <div class="page-header">
+
+                                <!-- <button type="button" id="displaybutton" class="btn btn-success">View To Do List</button> -->
+
+                                <div id="todoDiv">
+                                    <h2>To-Do/Notes</h2>
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-sm-10">
+
+                                                <input type="text" class="form-control" id="newTodo" placeholder="ex. 'flour', 'preheat oven', etc... ">
+                                            </div>
+                                            <button type="button" id="addItem" class="btn btn-success">Add To Do</button>
+                                        </div>
+                                    </form>
+
+                                    <ul id="todos">
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="title-youtube-results">
+                                <!--Youtube search header will appear here-->
+                            </div>
+                        </div>
+                        <div class="row" id="results-display-youtube-api">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-1">
         </div>
     </div>
+    </div>
+
+     
+    <!-- Bootstrap javascript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+        <!-- jQuery -->
+<script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <!-- firebase database -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+
+   
+    <!-- dara's to-do list js -->
+    <script type="text/javascript" src="assets/javascript/todo.js"></script>
+    <!-- jenina's recipe js -->
+    <script type="text/javascript" src="assets/javascript/recipe.js"></script>
+    <!-- melvin's youtube js -->
+    <script type="text/javascript" src="assets/javascript/ytlogic.js"></script>
+    <!-- email list js -->
+    <!-- <script type="text/javascript" src="assets/javascript/emaillist.js"></script> -->
+    
 
 </body>
+<footer>© Copyright 2018 Melvin and the Chipmunks </footer>
 
 </html>
