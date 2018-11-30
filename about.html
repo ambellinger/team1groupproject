@@ -47,7 +47,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index-jenina.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">About</a>
@@ -71,7 +71,7 @@
         <!-- Inside here there info will pop up. -->
         <div class="col-md-10" id="infoarea">
             <div class="row">
-                
+
                 <!-- Bio area -->
                 <div class="col-md-12" class="bio">
                     <h5> Meet Melvin and The Chipmunks</h5>
@@ -86,73 +86,96 @@
 
                 </div>
 
-               
 
-                    <!-- test to-do list -->
 
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3">
-                            <div class="page-header">
+                <!-- test to-do list -->
 
-                                <!-- <button type="button" id="displaybutton" class="btn btn-success">View To Do List</button> -->
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3">
+                        <div class="page-header">
 
-                                <div id="todoDiv">
-                                    <h2>To-Do/Notes</h2>
-                                    <form class="form-horizontal">
-                                        <div class="form-group">
-                                            <div class="col-sm-10">
+                            <!-- <button type="button" id="displaybutton" class="btn btn-success">View To Do List</button> -->
 
-                                                <input type="text" class="form-control" id="newTodo" placeholder="ex. 'flour', 'preheat oven', etc... ">
-                                            </div>
-                                            <button type="button" id="addItem" class="btn btn-success">Add To Do</button>
+                            <div id="todoDiv">
+                                <h2>To-Do/Notes</h2>
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <div class="col-sm-10">
+
+                                            <input type="text" class="form-control" id="newTodo" placeholder="ex. 'flour', 'preheat oven', etc... ">
                                         </div>
-                                    </form>
+                                        <button type="button" id="addItem" class="btn btn-success">Add To Do</button>
+                                    </div>
+                                </form>
 
-                                    <ul id="todos">
-                                    </ul>
-                                </div>
-
+                                <ul id="todos">
+                                </ul>
                             </div>
 
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="title-youtube-results">
+                            <!--Youtube search header will appear here-->
                         </div>
                     </div>
-
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div id="title-youtube-results">
-                                <!--Youtube search header will appear here-->
-                            </div>
-                        </div>
-                        <div class="row" id="results-display-youtube-api">
-                        </div>
+                    <div class="row" id="results-display-youtube-api">
                     </div>
                 </div>
             </div>
+        </div>
 
+        <!-- empty search field modal -->
+
+        <div class="modal" id="empty-search-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Invalid Input!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Please type in a recipe to search!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-1">
-        </div>
+
+        <div class="col-md-1"> </div>
     </div>
-    </div>
+    
+    
 
     <!-- Bootstrap javascript -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- more Bootstrap javascript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <!-- firebase database -->
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery.js"></script>
     <!-- dara's to-do list js -->
     <script type="text/javascript" src="assets/javascript/todo.js"></script>
     <!-- jenina's recipe js -->
     <script type="text/javascript" src="assets/javascript/recipe.js"></script>
     <!-- melvin's youtube js -->
     <script type="text/javascript" src="assets/javascript/ytlogic.js"></script>
+    <!-- email list js -->
+    <!-- <script type="text/javascript" src="assets/javascript/emaillist.js"></script> -->
 
 </body>
 <footer>© Copyright 2018 Melvin and the Chipmunks </footer>

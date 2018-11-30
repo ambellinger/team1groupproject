@@ -47,7 +47,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index-jenina.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">About</a>
@@ -71,7 +71,7 @@
         <!-- Inside here there info will pop up. -->
         <div class="col-md-10" id="infoarea">
             <div class="row">
-                
+
                 <!-- Left column -->
                 <div class="col-md-6">
 
@@ -87,52 +87,79 @@
                     </div>
                 </div>
                 <!-- Right column -->
-                <div class="col-md-6" >
-                    <!-- testing awesome fonts integration -->
-                    <!-- <i class="fas fa-trash-alt"></i>  -->
+                <div class="col-md-6">
 
                     <div id="introarea">
-                    <h3>Welcome to Let's Cookit!</h3>
-                    <p>  Looking for an easy TV dinner tonight, or looking to impress your family?</p>
-                        <p>Look no further.</p><p>Let's CookIt! is here to help you find your next recipe & inspiration!
-                  Take us with you on your tablet, phone, or laptop...and keep your notes and recipes in ONE
-                        place!</p>
-            <button type="button" class="btn" id="modalbutton" data-toggle="modal" data-target="#exampleModal"
-                    data-whatever="@getbootstrap">Sign up for our Mailing List</button>
+                        <h3>Welcome to Let's Cookit!</h3>
+                        <p> Looking for an easy TV dinner tonight, or looking to impress your family?</p>
+                        <p>Look no further.</p>
+                        <p>Let's CookIt! is here to help you find your next recipe & inspiration!
+                            Take us with you on your tablet, phone, or laptop...and keep your notes and recipes in ONE
+                            place!</p>
+                        <button type="button" class="btn" id="modalbutton" data-toggle="modal" data-target="#exampleModal"
+                            data-whatever="@getbootstrap">Sign up for our Mailing List</button>
 
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Enter your information below</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Name</label>
-                                        <input type="text" class="form-control" id="recipient-name">
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Enter your information below</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
                                     </div>
-                                    <div class="form-group">
-                                            <label for="exampleInputEmail1">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                            <small id="emailHelp" class="form-text text-muted">We'll only share your email with the Russians.</small>
-                                          </div>
-                                
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" id="send">Send</button>
-                            </div>
-                        </form>
-                        </div>
-                    </div>
-                </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="recipient-name" class="col-form-label">Name</label>
+                                                <input type="text" class="form-control" id="recipient-name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Email address</label>
+                                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                                    aria-describedby="emailHelp" placeholder="Enter email">
+                                                <small id="emailHelp" class="form-text text-muted">We'll only share
+                                                    your email with the Russians.</small>
+                                            </div>
 
-            </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary" id="send">Send</button>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                        <!-- empty search field modal -->
+
+                        <div class="modal" id="empty-search-modal" tabindex="-1" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Invalid Input!</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Please type in a recipe to search!</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    
 
                     <!-- test to-do list -->
 
@@ -182,13 +209,13 @@
     </div>
     </div>
 
-     
+
     <!-- Bootstrap javascript -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-
-        <!-- jQuery -->
-<script src="https://code.jquery.com/jquery.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- more Bootstrap Javascript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
@@ -196,8 +223,6 @@
     <!-- firebase database -->
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
-
-   
     <!-- dara's to-do list js -->
     <script type="text/javascript" src="assets/javascript/todo.js"></script>
     <!-- jenina's recipe js -->
@@ -206,7 +231,8 @@
     <script type="text/javascript" src="assets/javascript/ytlogic.js"></script>
     <!-- email list js -->
     <!-- <script type="text/javascript" src="assets/javascript/emaillist.js"></script> -->
-    
+
+
 
 </body>
 <footer>© Copyright 2018 Melvin and the Chipmunks </footer>
