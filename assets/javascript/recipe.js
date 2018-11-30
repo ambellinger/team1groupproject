@@ -72,7 +72,7 @@ $(document).ready(function(){
     
     
                                     // Parameters and attributes for the dynamic cardDiv
-                                    var cardDiv = $("<div class='recipeclass'>");
+                                    var cardDiv = $("<div class='recipeclass user-pick'>");
                                         cardDiv.attr("style", "border: none;");
                                         cardDiv.attr("data-id", results[i].recipe.label);
                                         cardDiv.attr("data-image", results[i].recipe.image);
