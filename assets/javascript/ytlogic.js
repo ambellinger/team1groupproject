@@ -83,14 +83,14 @@ $(document).ready(function(){
     };
     
     // code to be run when the user clicks the search button
-    $("#submit-button").on("click", function(){
+    $("#submit-button").on("click", function(event){
         
         // prevent the form from reloading the page
         event.preventDefault();
 
         if ($("#keyword-input").val().trim()===""){
-
-            $("#my-modal").modal("show")
+            console.log("ytlogic empty");
+            $("#empty-search-modal").modal("show");
         }
  
         else{

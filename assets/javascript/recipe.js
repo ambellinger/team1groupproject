@@ -24,8 +24,8 @@ $(document).ready(function(){
         event.preventDefault();
 
         if ($("#keyword-input").val().trim()===""){
-
-            $("#my-modal").modal("show")
+            console.log("it's empty");
+            $("#empty-search-modal").modal("show");
         }
  
         else{
