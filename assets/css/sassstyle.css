@@ -164,4 +164,9 @@ body {
   display: inline !important;
   color: black;
 }
+
+.done{
+  text-decoration: line-through;
+  opacity:0.5;
+}
 /*# sourceMappingURL=sassstyle.css.map */

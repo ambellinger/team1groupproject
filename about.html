@@ -109,7 +109,7 @@
 
 
                 <!-- recipe and youtube content will be added dynamically in this new row with two columns -->
-
+                <div class="col-md-12">
                 <div class="row">
 
                     <!-- Left column -->
@@ -132,31 +132,33 @@
                         <!-- test to-do list -->
 
                         <div class="row">
-                            <div class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3">
-                                <div class="page-header">
-
-                                    <!-- <button type="button" id="displaybutton" class="btn btn-success">View To Do List</button> -->
-
-                                    <div id="todoDiv">
-                                        <h2>To-Do/Notes</h2>
-                                        <form class="form-horizontal">
-                                            <div class="form-group">
-                                                <div class="col-sm-10">
-
-                                                    <input type="text" class="form-control" id="newTodo" placeholder="ex. 'flour', 'preheat oven', etc... ">
+                                <div class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3">
+                                    <div class="page-header">
+        
+                                        <!-- <button type="button" id="displaybutton" class="btn btn-success">View To Do List</button> -->
+        
+                                        <div id="todoDiv">
+                                            <h2>To-Do/Notes</h2>
+                                            <form class="form-inline">
+                                                <div class="form-group">
+        
+                                                    <div class="col-md-12">
+        
+                                                        <input type="text" class="form-control" id="newTodo" placeholder="ex. 'flour', 'preheat oven', etc... ">
+                                                        <button type="button" id="addItem" class="btn" style="margin:20px">Add
+                                                            To Do</button>
+                                                    </div>
                                                 </div>
-                                                <button type="button" id="addItem" class="btn btn-success">Add To Do</button>
-                                            </div>
-                                        </form>
-
-                                        <ul id="todos">
-                                        </ul>
+                                            </form>
+        
+                                            <ul id="todos">
+                                            </ul>
+                                        </div>
+        
                                     </div>
-
+        
                                 </div>
-
                             </div>
-                        </div>
 
                         <div class="row">
                             <div class="col-md-12">
@@ -168,6 +170,8 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                </div>
                 </div>
             </div>
         </div>
