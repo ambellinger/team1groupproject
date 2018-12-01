@@ -132,10 +132,6 @@ p {
   padding: 10px;
 }
 
-#infoarea .form-control {
-  display: none;
-}
-
 #infoarea .recipe-image {
   margin: 0;
 }
