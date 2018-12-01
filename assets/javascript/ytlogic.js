@@ -57,7 +57,7 @@ $(document).ready(function(){
                 resultsDisplayed.append(video);
 
                 // display the title identifying the youtube videos
-                $("#title-youtube-results").html("<h1>YouTube Video Results</h>");
+                $("#title-youtube-results").html("<h1>Video Results</h1>");
            
                 // display the thumbnails on the pre-existing div
                 $("#results-display-youtube-api").append("<h5>"+ videoTitle + "</h5>", "<br>",  resultsDisplayed);
@@ -110,8 +110,10 @@ $(document).ready(function(){
         // add width and height specifications to the video player
         // player.css("width", "640");
         // player.css("height", "360");
-        player.css("width", "320");
-        player.css("height", "180");
+        player.css("width", "640");
+        player.css("height", "360");
+        player.css("padding", "25");
+        player.css("margin", "0");
     
         //add an id, type, source and frameborder attibute to the video player 
         player.attr("type", "text/html");
