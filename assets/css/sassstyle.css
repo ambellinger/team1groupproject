@@ -132,10 +132,6 @@ p {
   padding: 10px;
 }
 
-#infoarea .form-control {
-  display: none;
-}
-
 #infoarea .recipe-image {
   margin: 0;
 }
@@ -167,5 +163,10 @@ body {
   text-decoration: none;
   display: inline !important;
   color: black;
+}
+
+.done{
+  text-decoration: line-through;
+  opacity:0.5;
 }
 /*# sourceMappingURL=sassstyle.css.map */
