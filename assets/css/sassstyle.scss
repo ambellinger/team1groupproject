@@ -8,20 +8,6 @@ $letterspacing: 2px;
 $circle: 50%;
 
 
-// img {
-//     border-radius: $circle;
-//     //height: 50%;
-//     //width: 50%;
-//     border: 5px solid $subcolor2;
-//     margin-left: 50px;
-//     display: block;
-//     margin-left: auto;
-//     margin-right: auto;
-    
-// }
-
-
-
 //Elements//
 h2 {
     color: $subcolor;
@@ -30,8 +16,9 @@ h2 {
 
 p {
     padding: 10px;
-   margin: 20px;
+   //margin: 20px;
     text-align: left;
+    font-size:19px;
 }
 
 //navbar//
@@ -82,15 +69,16 @@ p {
 
 //mainarea//
 
-
-
 #infoarea {
-   
+      
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        text-align: center;
+       // text-align: center;
        margin: 2% 0%;
        padding-bottom: 25px;
-       height: 1200px;
+       
+      h1 {
+          margin-top: 2%;
+      }
 
        h5 {
            color: $subcolor;
@@ -106,17 +94,16 @@ p {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        //width: 399px;
-       // width: 90%;
-        //height: 240px;
         padding: 0 20px;
-           
+        
        }
        
      
         a {
             @extend img;
             @extend h5;
+            margin-left: 15px;
+            
             
         }
 
@@ -160,11 +147,14 @@ p {
         
         #chip {
             
-                height: 20%;
-                width: 20%;
+               height: 200px;
+                width: 200px;
                 border-radius: 50%;
-                margin-left: 5%;
-                border: 1px solid $minorcolor;
+                margin-left: 3%;
+                box-sizing: initial;
+                
+               
+                
             
         }
 
@@ -173,6 +163,24 @@ p {
             display: inline-block;
         }
         
+        #todoDiv {
+            #addItem {
+                padding: 200px;
+            }
+        }
+        
+        .form-control {
+            display: none;
+        }
+
+        .recipe-image {
+            margin: 0;
+        }
+        
+        .user-pick {
+            margin: 0;
+        }
+       
 
     }
 
@@ -187,9 +195,23 @@ footer {
     right: 0;
     bottom: 0;
     color: $subcolor2;
+    
 }
 
- body{   
+ body{
+        
      padding-bottom:400px;
      font-family: 'El Messiri', sans-serif;
  }
+
+ //Social Media Icons//
+ #socialmedia {
+    //padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline !important;
+    color: black;
+ }
+  

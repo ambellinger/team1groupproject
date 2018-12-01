@@ -35,6 +35,7 @@ $(document).ready(function(){
         $("#results-display").empty();
         $("#results-display-recipe-api").empty();
         $("#results-display-youtube-api").empty();
+        $("#recipe-button-area").empty();
         $("#todoDiv").hide();
     
         
@@ -47,6 +48,7 @@ $(document).ready(function(){
     
     
         // Appends a header to the user of their search of choice
+       
         $("#title-recipe-results").prepend("<h4>Recipes for: " + keyword + "</h4>");
     
     
@@ -79,7 +81,8 @@ $(document).ready(function(){
                                         cardDiv.attr("data-url", results[i].recipe.url);
                                         cardDiv.attr("id", "recipe-result");
                                         cardDiv.css("float", "left");
-                                        cardDiv.css("margin", "15px");
+                                       cardDiv.css("margin-left", "15px");
+                                       cardDiv.css("text-align", "left")
     
     
                                     // Attributes for the image, links and title - within the card
@@ -115,8 +118,11 @@ $(document).ready(function(){
     
     
                                     // Append all our created elements into our HTML.
+                                    $("#title-recipe-results").html("<h1>Web Results</h1>");
                                     cardDiv.append(recipeLink);
                                     cardDiv.append(image);
+
+                                   
                                     
                                     $("#results-display-recipe-api").append(cardDiv);
     
@@ -153,6 +159,7 @@ $(document).ready(function(){
             $("#title-youtube-results").empty();
             $("#results-display-recipe-api").empty();
             $("#results-display-youtube-api").empty();
+            $("#recipe-button-area").empty();
     
             event.preventDefault();
     
@@ -181,7 +188,7 @@ $(document).ready(function(){
             $("#results-display-recipe-api").append(displayRecipeImage);
            
             $("#results-display-recipe-api").append("<h2>Ingredients:</h2><br>", dynamicRecipeDiv);
-             $("#results-display-recipe-api").append(displayRecipeURL);
+             $("#recipe-button-area").append(displayRecipeURL);
     
         // });
     };

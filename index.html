@@ -65,11 +65,11 @@
 
 
     <!-- main area with two white sides framing the content -->
-    <div class="row">
+    <div class="row" id="maindiv">
         <div class="col-md-1"></div>
 
         <!-- Inside here there info will pop up. -->
-        <div class="col-md-10" id="infoarea">
+        <div class="col-md-10" id="infoarea" style="height: auto;">
             <div class="row">
 
                 <!-- Left column -->
@@ -84,6 +84,11 @@
                         <div class="row" id="results-display-recipe-api">
                             <img src="assets/images/adorable-baby-baker-35666.jpg" class="stockphoto">
                         </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10" id="recipe-button-area"></div>
+                            <div class="col-md-1"></div>
+                        </div>
                     </div>
                 </div>
                 <!-- Right column -->
@@ -96,8 +101,13 @@
                         <p>Let's CookIt! is here to help you find your next recipe & inspiration!
                             Take us with you on your tablet, phone, or laptop...and keep your notes and recipes in ONE
                             place!</p>
+
+                         
+                            <br>
                         <button type="button" class="btn" id="modalbutton" data-toggle="modal" data-target="#exampleModal"
                             data-whatever="@getbootstrap">Sign up for our Mailing List</button>
+
+                            
 
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
@@ -135,31 +145,31 @@
 
                     </div>
 
-                        <!-- empty search field modal -->
+                    <!-- empty search field modal -->
 
-                        <div class="modal" id="empty-search-modal" tabindex="-1" role="dialog">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Invalid Input!</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Please type in a recipe to search!</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    </div>
+                    <div class="modal" id="empty-search-modal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Invalid Input!</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Please type in a recipe to search!</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
 
 
 
-                    
+
 
                     <!-- test to-do list -->
 
@@ -171,13 +181,15 @@
 
                                 <div id="todoDiv">
                                     <h2>To-Do/Notes</h2>
-                                    <form class="form-horizontal">
+                                    <form class="form-inline">
                                         <div class="form-group">
-                                            <div class="col-sm-10">
+
+                                            <div class="col-md-12">
 
                                                 <input type="text" class="form-control" id="newTodo" placeholder="ex. 'flour', 'preheat oven', etc... ">
+                                                <button type="button" id="addItem" class="btn" style="margin:20px">Add
+                                                    To Do</button>
                                             </div>
-                                            <button type="button" id="addItem" class="btn btn-success">Add To Do</button>
                                         </div>
                                     </form>
 
@@ -192,13 +204,17 @@
 
 
                     <div class="row">
+
                         <div class="col-md-12">
                             <div id="title-youtube-results">
                                 <!--Youtube search header will appear here-->
                             </div>
+
+
+                            <div class="row" id="results-display-youtube-api">
+                            </div>
                         </div>
-                        <div class="row" id="results-display-youtube-api">
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -235,6 +251,9 @@
 
 
 </body>
-<footer>© Copyright 2018 Melvin and the Chipmunks </footer>
+<footer>© Copyright 2018 Melvin and the Chipmunks <br>   <a href="https://www.google.com/"><i class="fab fa-facebook-square" id="socialmedia"></i></a>
+    <a href="https://www.google.com/"><i class="fab fa-twitter-square" id="socialmedia"></i></a>
+    <a href="https://www.google.com/"><i class="fab fa-instagram"id="socialmedia"></i></a>
+    <a href="https://www.google.com/"><i class="fab fa-pinterest-square" id="socialmedia"></i></a> </footer>
 
 </html>
